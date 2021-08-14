@@ -1,0 +1,17 @@
+.editBox {
+  padding: 0.05rem 0.2rem;
+}
+
+.editBox[contentEditable='false'] {
+  border: 1px solid transparent;
+}
+
+.editBox[contentEditable='true'] {
+  background-color: moccasin;
+  border: 1px solid orange;
+  border-radius: 4px;
+} 
+
+.empty {
+  color: gray;
+}
