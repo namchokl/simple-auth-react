@@ -42,9 +42,9 @@ const MainNav = (props) => {
 					)}
 					{isLoggedIn && (
 						<li>
-              <a onClick={logoutHandler} className={classes.button}>
+              <button onClick={logoutHandler} className={classes.button}>
                 Logout
-              </a>
+              </button>
 						</li>
 					)}
 				</ul>

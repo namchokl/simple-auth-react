@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../store/auth-actions';
-import { authActions } from '../../store/auth';
+// import { authActions } from '../../store/auth';
 
 import Input from '../../components/Form/Input/Input';
 import Button from '../../components/Button/Button';
@@ -43,7 +43,7 @@ const Signup = (props) => {
 			console.log('redirect to Login page...');
 			history.replace('/login');
 		}
-	}, [signupStatus]);
+	}, [signupStatus, history]);
 
 	const dispatch = useDispatch();
 

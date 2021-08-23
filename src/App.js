@@ -8,6 +8,8 @@ import HomePage from './pages/Home';
 import LoginPage from './pages/Auth/Login';
 import SignupPage from './pages/Auth/Signup';
 
+import Socketio from './pages/Socketio/Socket';
+
 import NotFound from './pages/NotFound';
 
 import './App.css';
@@ -27,7 +29,7 @@ function App() {
 				})
 			);
 		}
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<Layout>
@@ -43,6 +45,9 @@ function App() {
 				</Route>
 				<Route path='/signup'>
 					<SignupPage />
+				</Route>
+				<Route path='/socketio'>
+					<Socketio />
 				</Route>
 				<Route path='*'>
 					<NotFound />

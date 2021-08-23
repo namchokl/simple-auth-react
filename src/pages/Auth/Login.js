@@ -59,7 +59,7 @@ const Login = (props) => {
 			dispatch(authActions.clearSignup());
 
 		}
-	}, [isLoggedIn]);
+	}, [isLoggedIn, dispatch, history, signupStatus]);
 
 	const onLoginHandler = (e, loginData) => {
     console.log('onLoginHandler...')
