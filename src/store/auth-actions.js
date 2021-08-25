@@ -1,7 +1,7 @@
 import { authActions } from './auth';
 import { notify } from './ui-notifyActions';
 
-const SERVER_URL = 'http://localhost:8080';
+import { SERVER_URL } from '../setting';
 
 export const login = (authData) => {
 	return async (dispatch) => {

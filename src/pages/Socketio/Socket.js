@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import io from 'socket.io-client';
 
+import { SERVER_URL } from '../../setting';
+
+const NS = 'Game-1';
 const Socket = (props) => {
   const socketRef = useRef();
 
@@ -8,16 +11,20 @@ const Socket = (props) => {
 
   // connect socketio
   useEffect(() => {
-    socketRef.current = io('http://localhost:8080');
+    socketRef.current = io( `${SERVER_URL}/${NS}`);
     const socket = socketRef.current;
 
     socket.on('connect', () => {
-      console.log('Connected to server.');
+      console.log('Connected to ' + NS);
+      socket.emit('make-room', {name: 'abc'});
     });
 
-    socket.on('msg', (msg) => {
-      console.log(msg);
-      setMsg(msg.msg);
+    socket.on('roomList', data => {
+      console.log(data);
+    });
+
+    socket.on('roomData', (data) => {
+      console.log(data);
     });
 
     return () => {
